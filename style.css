@@ -1,3 +1,24 @@
+.reponse {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.reponseBox {
+  width: 75%;
+  height: 3em;
+  background-color: var(--divBackgroundColor);
+  border: 2px solid var(--borderColor);
+  border-radius: var(--borderRadius);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reponseQ {
+  background-color: var(--divBackgroundColor);
+  color: white;
+  text-align: center;
+}
 :root {
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
