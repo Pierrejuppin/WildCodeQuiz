@@ -1,24 +1,4 @@
-.reponse {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-}
 
-.reponseBox {
-  width: 75%;
-  height: 3em;
-  background-color: var(--divBackgroundColor);
-  border: 2px solid var(--borderColor);
-  border-radius: var(--borderRadius);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reponseQ {
-  background-color: var(--divBackgroundColor);
-  color: white;
-  text-align: center;
-}
 :root {
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
@@ -33,70 +13,13 @@
    /*  outline: solid 1px red; */
   }
  
-  body{
+ 
+  body {
+    margin: 0;
     background-color: var(--quizzBackgroundColor);
-  }
-
-.reponse {
-  display: grid;
-  gap: 1rem;
-  grid-template-columns: 1fr 1fr;
 }
 
-.reponseBox {
-  width: 90%;
-  height: 4em;
-  background-color: var(--divBackgroundColor);
-  border: 2px solid var(--borderColor);
-  border-radius: var(--borderRadius);
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.reponseQ {
-  background-color: var(--divBackgroundColor);
-  color: white;
-  text-align: center;
-  margin-top: 1.3em;
-}
-
-
-/* footer */
-
-
-.bottom {
-  background-color: var(--divBackgroundColor);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 15em; /*Régler le margin si vous venez de pull*/
-  border-top: solid 5px var(--borderColor);
-}
-@media screen and (min-width: 800px) {
-  .bottom {
-    width: 100%;
-  }
-}
-.bottom span {
-  display: flex;
-  justify-content: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-  margin-right: 1em;
-  text-align: center;
-  max-height: 65ch;
-}
-@media screen and (min-width: 800px) {
-  .bottom span {
-    padding-right: 8em;
-    padding-left: 8em;
-  }
-}
-
-.footerCenter {
-  border-right: solid 3px var(--borderColor);
-  border-left: solid 3px var(--borderColor);
-}
+/* HEADER menu  */
 
 .anta-regular {
   font-family: "Anta", sans-serif;
@@ -154,14 +77,7 @@ left: 0;
   margin: 6px 0;
 }
 
-
-
-
- 
-body {
-    margin: 0;
-    background-color: var(--quizzBackgroundColor);
-}
+/* Section Question */
 
 .zoneQuizz {
   display: flex;
@@ -194,4 +110,68 @@ body {
   justify-content: center;
   color: white;
 
+}
+
+/* Section Reponse */
+
+.reponse {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3em;
+}
+
+.reponseBox {
+  width: 90%;
+  height: 4em;
+  background-color: var(--divBackgroundColor);
+  border: 2px solid var(--borderColor);
+  border-radius: var(--borderRadius);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reponseQ {
+  background-color: var(--divBackgroundColor);
+  color: white;
+  text-align: center;
+  margin-top: 1.3em;
+}
+
+
+/* footer */
+
+
+.bottom {
+  background-color: var(--divBackgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15em; /*Régler le margin si vous venez de pull*/
+  border-top: solid 5px var(--borderColor);
+}
+@media screen and (min-width: 800px) {
+  .bottom {
+    width: 100%;
+  }
+}
+.bottom span {
+  display: flex;
+  justify-content: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-right: 1em;
+  text-align: center;
+  max-height: 65ch;
+}
+@media screen and (min-width: 800px) {
+  .bottom span {
+    padding-right: 8em;
+    padding-left: 8em;
+  }
+}
+
+.footerCenter {
+  border-right: solid 3px var(--borderColor);
+  border-left: solid 3px var(--borderColor);
 }
