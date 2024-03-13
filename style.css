@@ -9,10 +9,12 @@
 
   *{
     margin: 0;
-    background-color: var(--quizzBackgroundColor);
-    outline: solid 1px red;
+   /*  outline: solid 1px red; */
   }
  
+  body{
+    background-color: var(--quizzBackgroundColor);
+  }
 
 .reponse {
   display: grid;
