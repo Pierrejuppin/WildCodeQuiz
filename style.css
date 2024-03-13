@@ -5,8 +5,62 @@
   --borderColor: #ffa62bff;
   --textCodeColor: #8f2d56;
   --borderRadius: 15%;
-  
-
-
 
 }
+
+.anta-regular {
+  font-family: "Anta", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.menu{
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: -250px;
+  background-color: var(--homeBackgroundColor);
+  padding-top: 60px;
+  transition: left 0.5s ease;
+}
+
+.menu a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color:white;
+  display: block;
+  transition: 0.3s;
+}
+
+.menu a:hover{
+  color: black;
+}
+
+.menu ul{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu.active{
+left: 0;
+}
+
+.menu.close{
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+
+.burggerIcon span{
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
+
