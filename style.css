@@ -4,11 +4,35 @@
   --homeBackgroundColor: #82c0ccff;
   --borderColor: #ffa62bff;
   --textCodeColor: #8f2d56;
-  --borderRadius: 15%;
+  --borderRadius: 15px;
 }
-/* debug !! */
-/*  {
-  outline: solid 1px red;
-  } */
-/* debug !! */
+ /* debug !! */
+  *{
+    background-color: var(--quizzBackgroundColor);
+    outline: solid 1px red;
+  }
+/* debug !! */ 
 
+.reponse {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.reponseBox {
+  width: 75%;
+  height: 3em;
+  background-color: var(--divBackgroundColor);
+  border: 2px solid var(--borderColor);
+  border-radius: var(--borderRadius);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reponseQ {
+  background-color: var(--divBackgroundColor);
+  color: white;
+  text-align: center;
+  
+
+}
