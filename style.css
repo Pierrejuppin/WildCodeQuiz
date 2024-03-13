@@ -20,7 +20,8 @@
   grid-template-columns: 1fr 1fr;
 }
 
-.reponseQ {width: 90%;
+.reponseBox {
+  width: 90%;
   height: 4em;
   background-color: var(--divBackgroundColor);
   border: 2px solid var(--borderColor);
