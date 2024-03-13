@@ -6,9 +6,34 @@
   --textCodeColor: #8f2d56;
   --borderRadius: 15%;
 }
-/* debug !! */
-/*  {
-  outline: solid 1px red;
-  } */
-/* debug !! */
 
+* {
+  // outline: solid 1px red;
+  margin: 0;
+}
+
+body {
+  background-color: var(--quizzBackgroundColor);
+}
+
+.bottom {
+  background-color: var(--divBackgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28em;
+  border-top: solid 5px var(--borderColor);
+}
+.bottom span {
+  display: flex;
+  justify-content: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-right: 1em;
+  text-align: center;
+  max-height: 65ch;
+}
+.footerCenter {
+  border-right: solid 3px var(--borderColor);
+  border-left: solid 3px var(--borderColor);
+}
