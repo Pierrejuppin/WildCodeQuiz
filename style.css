@@ -1,7 +1,7 @@
-:root  {
---quizzBackgroundColor: #16697aff;
---frameBackgroundColor: #489fb5ff;
---homeBackgroundColor: #82c0ccff;
---borderColor: #ffa62bff;
---textCode: #8F2D56;
+:root {
+  --quizzBackgroundColor: #16697aff;
+  --divBackgroundColor: #489fb5ff;
+  --homeBackgroundColor: #82c0ccff;
+  --borderColor: #ffa62bff;
+  --textCodeColor: #8f2d56;
 }
