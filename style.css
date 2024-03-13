@@ -5,8 +5,46 @@
   --borderColor: #ffa62bff;
   --textCodeColor: #8f2d56;
   --borderRadius: 15%;
-  
+ }
 
+ *{
+  outline: solid 1px red;
+}
 
+body {
+    margin: 0;
+    background-color: var(--quizzBackgroundColor);
+}
+
+.zoneQuizz {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.zoneQuizz img {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 15px 15px 0 0;
+    
+} 
+
+.boxQuestion {
+  width: 70%;
+  height: 3.5rem;
+  border-radius: 15px;
+  background-color: var(--divBackgroundColor);
+  border: 3px solid var(--borderColor) ;
+  align-items: center;
+}
+
+.question {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  color: white;
 
 }
