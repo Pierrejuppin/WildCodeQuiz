@@ -8,21 +8,25 @@
       name="Auteur"
       content="Angelique Grall, Pierre Juppin, Hippolyte Weber, Michael Lelu"
     />
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
     <title>Wild Code Quizz</title>
   </head>
   <body>
     <header>
       <div class="logo"></div>
-      <div class="menuBurger">
-        <nav>
-          <ul>
-            <li><a href="About"></a></li>
-            <li><a href="Theme"</a></li>
-            <li><a href="Rules"></a></li>
-            <li><a href= "Sign up" ></a></li>
-          </ul>
-        </nav>
+      <div id="menuBurgger" class="menu">
+        <a id="closeBtn" href="#" class="close">x</a>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Theme</a></li>
+          <li><a href="#">Rules</a></li>
+          <li><a href="#">Sign up</a></li>
+        </ul>
       </div>
+      <a href="#" id="openBtn">
+        <span class="burggerIcon"></span>
+      </a>
       <div class="boxScore"></div>
     </header>
     <main>
