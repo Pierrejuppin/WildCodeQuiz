@@ -36,3 +36,46 @@
   
 
 }
+
+* {
+  /*outline: solid 1px red;*/
+  margin: 0;
+}
+
+body {
+  background-color: var(--quizzBackgroundColor);
+}
+
+.bottom {
+  background-color: var(--divBackgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 33em; /*Régler le margin si vous venez de pull*/
+  border-top: solid 5px var(--borderColor);
+}
+@media screen and (min-width: 800px) {
+  .bottom {
+    width: 100%;
+  }
+}
+.bottom span {
+  display: flex;
+  justify-content: center;
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+  margin-right: 1em;
+  text-align: center;
+  max-height: 65ch;
+}
+@media screen and (min-width: 800px) {
+  .bottom span {
+    padding-right: 8em;
+    padding-left: 8em;
+  }
+}
+
+.footerCenter {
+  border-right: solid 3px var(--borderColor);
+  border-left: solid 3px var(--borderColor);
+}
