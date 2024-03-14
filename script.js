@@ -1,14 +1,14 @@
-const menu = document.getElementById("menu");
-const openBtn = document.getElementById("openBtn");
-const closeBtn = document.getElementById("closeBtn");
+const menuB = document.querySelector(".menu");
+const openBtn = document.querySelector("#openBtn");
+const closeBtn = document.querySelector("#closeBtn");
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 
 function openNav(){
-    menu.classList.add("active");
+    menuB.classList.add("active");
 }
 
 function closeNav(){
-    menu.classList.remove("active")
+    menuB.classList.remove("active")
 }
