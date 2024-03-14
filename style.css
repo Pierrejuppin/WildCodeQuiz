@@ -10,7 +10,7 @@
 
   *{
     margin: 0;
-   /*  outline: solid 1px red; */
+    outline: solid 1px red;
   }
  
  
@@ -112,6 +112,12 @@ left: 0;
 
 }
 
+.timer {
+  font-weight: bold;
+  font-size: 4em;
+  color: white
+}
+
 /* Section Reponse */
 
 .reponse {
@@ -147,8 +153,11 @@ left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15em; /*Régler le margin si vous venez de pull*/
   border-top: solid 5px var(--borderColor);
+  position: fixed;
+  bottom:0;
+  left:0;
+  right: 0;
 }
 @media screen and (min-width: 800px) {
   .bottom {
@@ -174,4 +183,5 @@ left: 0;
 .footerCenter {
   border-right: solid 3px var(--borderColor);
   border-left: solid 3px var(--borderColor);
+  clear: left;
 }
