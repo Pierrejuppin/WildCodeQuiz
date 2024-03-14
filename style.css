@@ -1,5 +1,6 @@
 
 :root {
+
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
   --homeBackgroundColor: #82c0ccff;
@@ -15,16 +16,34 @@
  
  
   body {
-    margin: 0;
+    font-family: "Anta", sans-serif;
     background-color: var(--quizzBackgroundColor);
 }
 
 /* HEADER menu  */
 
-.anta-regular {
-  font-family: "Anta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.topPage {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo img {
+  background-color: var(--divBackgroundColor);
+  width: 6em;
+  border: 2px solid var(--borderColor);
+  border-radius: var(--borderRadius);
+}
+
+.boxScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  width: 3em;
+  color: white;
+  background-color: var(--divBackgroundColor);
+  border: 2px solid var(--borderColor);
+  border-radius: 50%;
 }
 
 .menu{
@@ -69,12 +88,9 @@ left: 0;
   font-size: 36px;
 }
 
-.burggerIcon span{
-  display: block;
-  width: 35px;
-  height: 5px;
-  background-color: black;
-  margin: 6px 0;
+.burggerIcon img {
+  width: 6em;
+  height: 3em;
 }
 
 /* Section Question */
@@ -95,7 +111,7 @@ left: 0;
 .boxQuestion {
   width: 70%;
   height: 3.5rem;
-  border-radius: 15px;
+  border-radius: var(--borderRadius);
   background-color: var(--divBackgroundColor);
   border: 3px solid var(--borderColor) ;
   align-items: center;
