@@ -23,6 +23,7 @@
 /* HEADER menu  */
 
 .topPage {
+  margin:0.5em;
   display: flex;
   justify-content: space-between;
 }
@@ -46,9 +47,11 @@
   border-radius: 50%;
 }
 
+/* MENU Burger */
+
 .menu{
   height: 100%;
-  width: 250px;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -61,7 +64,7 @@
 .menu a{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 15px;
   color:white;
   display: block;
   transition: 0.3s;
@@ -84,9 +87,9 @@ left: 0;
 .menu.close{
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-}
+  right: 6em;
+  font-size: 4em;
+} 
 
 .burggerIcon img {
   width: 6em;
@@ -125,7 +128,7 @@ left: 0;
   align-items: center;
   justify-content: center;
   color: white;
-
+  font-size: 1.2em;
 }
 
 .timer {
@@ -138,7 +141,7 @@ left: 0;
 
 .reponse {
   display: grid;
-  gap: 1rem;
+  gap: 4rem;
   grid-template-columns: 1fr 1fr;
   margin-top: 3em;
 }
@@ -151,13 +154,16 @@ left: 0;
   border-radius: var(--borderRadius);
   margin-left: auto;
   margin-right: auto;
+  color: white;
+  font-family: "Anta", sans-serif;
+  font-size: 1em;
+  
 }
 
-.reponseQ {
-  background-color: var(--divBackgroundColor);
-  color: white;
-  text-align: center;
-  margin-top: 1.3em;
+.reponseBox:hover  {
+  background-color: var(--homeBackgroundColor);
+  -webkit-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.7); 
+box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
 }
 
 
