@@ -1,4 +1,3 @@
-
 :root {
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
@@ -8,15 +7,99 @@
   --borderRadius: 15px;
 }
 
-  *{
-    margin: 0;
-   /*  outline: solid 1px red; */
+* {
+  margin: 0;
+  /*  outline: solid 1px red; */
+}
+
+body {
+  margin: 0;
+  background-color: var(--quizzBackgroundColor);
+}
+
+/* style de la page d'accueil */
+
+.homeContainerOfimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--divBackgroundColor);
+  border: 3px solid var(--borderColor);
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5em;
+  width: 98px;
+  height: 76px;
+}
+.imgOfHomeContainer {
+  height: 42px;
+  width: 38px;
+}
+
+.welcomeBox {
+  background-color: var(--divBackgroundColor);
+  display: flex;
+  border: 3px solid var(--borderColor);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 79px;
+  width: 295px;
+  height: 230px;
+  border-radius: 15px;
+}
+.userPseudoHome {
+  display: flex;
+  margin-top: 79px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--divBackgroundColor);
+  border: 3px solid var(--borderColor);
+  border-radius: 15px;
+  width: 300px;
+  height: 42px;
+}
+.goBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 79px;
+  width: 97px;
+  height: 43px;
+  background-color: var(--quizzBackgroundColor);
+  border-radius: 15px;
+  border: solid 3px var(--borderColor);
+}
+@media screen and (min-width: 800px) {
+  .homeContainerOfimg {
+    width: 173px;
+    height: 143px;
+    margin-top: 41px;
   }
- 
- 
-  body {
-    margin: 0;
-    background-color: var(--quizzBackgroundColor);
+  .imgOfHomeContainer {
+    height: 116px;
+    width: 126px;
+  }
+  .welcomeBox {
+    width: 696px;
+    height: 292px;
+    margin-top: 76px;
+  }
+  .userPseudoHome {
+    width: 414px;
+    height: 82px;
+  }
+  .goBtn {
+    margin-top: 26px;
+  }
 }
 
 /* HEADER menu  */
@@ -27,7 +110,7 @@
   font-style: normal;
 }
 
-.menu{
+.menu {
   height: 100%;
   width: 250px;
   position: fixed;
@@ -39,37 +122,37 @@
   transition: left 0.5s ease;
 }
 
-.menu a{
+.menu a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
-  color:white;
+  color: white;
   display: block;
   transition: 0.3s;
 }
 
-.menu a:hover{
+.menu a:hover {
   color: black;
 }
 
-.menu ul{
+.menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.menu.active{
-left: 0;
+.menu.active {
+  left: 0;
 }
 
-.menu.close{
+.menu.close {
   position: absolute;
   top: 0;
   right: 25px;
   font-size: 36px;
 }
 
-.burggerIcon span{
+.burggerIcon span {
   display: block;
   width: 35px;
   height: 5px;
@@ -86,18 +169,17 @@ left: 0;
 }
 
 .zoneQuizz img {
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 15px 15px 0 0;
-    
-} 
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 15px 15px 0 0;
+}
 
 .boxQuestion {
   width: 70%;
   height: 3.5rem;
   border-radius: 15px;
   background-color: var(--divBackgroundColor);
-  border: 3px solid var(--borderColor) ;
+  border: 3px solid var(--borderColor);
   align-items: center;
 }
 
@@ -109,7 +191,6 @@ left: 0;
   align-items: center;
   justify-content: center;
   color: white;
-
 }
 
 /* Section Reponse */
@@ -138,16 +219,18 @@ left: 0;
   margin-top: 1.3em;
 }
 
-
 /* footer */
-
 
 .bottom {
   background-color: var(--divBackgroundColor);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15em; /*Régler le margin si vous venez de pull*/
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 66px;
   border-top: solid 5px var(--borderColor);
 }
 @media screen and (min-width: 800px) {
@@ -174,4 +257,6 @@ left: 0;
 .footerCenter {
   border-right: solid 3px var(--borderColor);
   border-left: solid 3px var(--borderColor);
+  height: 66px;
+  align-items: center;
 }
