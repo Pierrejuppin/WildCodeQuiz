@@ -1,4 +1,5 @@
 :root {
+
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
   --homeBackgroundColor: #82c0ccff;
@@ -6,6 +7,7 @@
   --textCodeColor: #8f2d56;
   --borderRadius: 15px;
 }
+
 
 * {
   margin: 0;
@@ -100,19 +102,42 @@ body {
   .goBtn {
     margin-top: 26px;
   }
+
 }
 
 /* HEADER menu  */
 
-.anta-regular {
-  font-family: "Anta", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+.topPage {
+  margin:0.5em;
+  display: flex;
+  justify-content: space-between;
 }
 
-.menu {
+.logo img {
+  background-color: var(--divBackgroundColor);
+  width: 6em;
+  border: 2px solid var(--borderColor);
+  border-radius: var(--borderRadius);
+}
+
+.boxScore {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  width: 3em;
+  color: white;
+  background-color: var(--divBackgroundColor);
+  border: 2px solid var(--borderColor);
+  border-radius: 50%;
+}
+
+
+/* MENU Burger */
+
+.menu{
   height: 100%;
-  width: 250px;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -125,8 +150,9 @@ body {
 .menu a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
-  font-size: 25px;
-  color: white;
+
+  font-size: 15px;
+  color:white;
   display: block;
   transition: 0.3s;
 }
@@ -148,9 +174,10 @@ body {
 .menu.close {
   position: absolute;
   top: 0;
-  right: 25px;
-  font-size: 36px;
-}
+  right: 6em;
+  font-size: 4em;
+} 
+
 
 .burggerIcon span {
   display: block;
@@ -158,6 +185,10 @@ body {
   height: 5px;
   background-color: black;
   margin: 6px 0;
+
+.burggerIcon img {
+  width: 6em;
+  height: 3em; 
 }
 
 /* Section Question */
@@ -177,7 +208,7 @@ body {
 .boxQuestion {
   width: 70%;
   height: 3.5rem;
-  border-radius: 15px;
+  border-radius: var(--borderRadius);
   background-color: var(--divBackgroundColor);
   border: 3px solid var(--borderColor);
   align-items: center;
@@ -191,13 +222,21 @@ body {
   align-items: center;
   justify-content: center;
   color: white;
+
+  font-size: 1.2em;
+}
+
+.timer {
+  font-weight: bold;
+  font-size: 4em;
+  color: white
 }
 
 /* Section Reponse */
 
 .reponse {
   display: grid;
-  gap: 1rem;
+  gap: 4rem;
   grid-template-columns: 1fr 1fr;
   margin-top: 3em;
 }
@@ -210,13 +249,16 @@ body {
   border-radius: var(--borderRadius);
   margin-left: auto;
   margin-right: auto;
+  color: white;
+  font-family: "Anta", sans-serif;
+  font-size: 1em;
+  
 }
 
-.reponseQ {
-  background-color: var(--divBackgroundColor);
-  color: white;
-  text-align: center;
-  margin-top: 1.3em;
+.reponseBox:hover  {
+  background-color: var(--homeBackgroundColor);
+  -webkit-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.7); 
+box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
 }
 
 /* footer */
@@ -259,4 +301,5 @@ body {
   border-left: solid 3px var(--borderColor);
   height: 66px;
   align-items: center;
+
 }

@@ -8,7 +8,9 @@
       name="Auteur"
       content="Angelique Grall, Pierre Juppin, Hippolyte Weber, Michael Lelu"
     />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
     <title>Wild Code Quizz</title>
@@ -23,9 +25,12 @@
     <button type="submit" class="goBtn">GO</button>
   </div>
     <header>
-      <div class="logo"></div>
-      <div id="menuBurgger" class="menu">
-        <a id="closeBtn" href="#" class="close">x</a>
+      <div class="topPage">
+      <div class="logo"><img src="assets/apple-touch-icon-180x180.png" alt="Logo Wild Code Quiz"></div>      
+      <div class="boxScore"> 0/10</div>
+    </div>
+    <div id="menuBurgger" class="menu">
+      <a id="closeBtn" href="#" class="close">X</a>
         <ul>
           <li><a href="#">About</a></li>
           <li><a href="#">Theme</a></li>
@@ -34,11 +39,10 @@
         </ul>
       </div>
       <a href="#" id="openBtn">
-        <span class="burggerIcon">
-          <img scr=" alt="Trois lignes les une en dessous des autres"/>
-        </span>
+        <div class="burggerIcon">
+          <img src="assets/burgerIcone.png" alt="Trois lignes les une en dessous des autres"/>
+        </div>
       </a>
-      <div class="boxScore"></div>
     </header>
     <main>
       <section class="zoneQuizz">
@@ -50,20 +54,20 @@
         </div>
       </section>
       <div class="timer"></div>
-      <section class="reponse">
-        <div class="reponseBox A">
-          <div class="reponseQ A">reponseA</div>
-        </div>
-        <div class="reponseBox B">
-          <div class="reponseQ B">reponseB</div>
-        </div>
-        <div class="reponseBox C">
-          <div class="reponseQ C">reponseC</div>
-        </div>
-        <div class="reponseBox D">
-          <div class="reponseQ D">reponseD</div>
-        </div>
-      </section>
+      <div class="reponse">
+        <button class="reponseBox A"  value="reponseA">
+        reponse A
+        </button>
+        <button class="reponseBox B" value="reponseB">
+          reponse B
+        </button>
+        <button class="reponseBox C" value="reponseC">
+          reponse C
+        </button>
+        <button class="reponseBox D" value="reponseD">
+          reponse D
+        </button>
+      </div>
     </main>
     <footer class="bottom">
       <span><small>Contact</small></span>
