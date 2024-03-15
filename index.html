@@ -15,7 +15,15 @@
     <link rel="stylesheet" href="style.css" />
     <title>Wild Code Quizz</title>
   </head>
-  <body>
+  <body id="background">
+    <div class="homeContainer">
+      <div class="homeContainerOfimg"><img class="imgOfHomeContainer" src="assets/apple-touch-icon-180x180.png"/></div>
+    <div class="welcomeBox"><p>Bienvenue sur le
+    <br /> Wild Code Quizz</p>
+    </div>
+    <textarea class="userPseudoHome">Entrer votre pseudo ici</textarea>
+    <button type="submit" class="goBtn">GO</button>
+  </div>
     <header>
       <div class="topPage">
       <div class="logo"><img src="assets/apple-touch-icon-180x180.png" alt="Logo Wild Code Quiz"></div>      
@@ -24,10 +32,10 @@
     <div id="menuBurgger" class="menu">
       <a id="closeBtn" href="#" class="close">X</a>
         <ul>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Theme</a></li>
-          <li><a href="#">Rules</a></li>
-          <li><a href="#">Sign up</a></li>
+          <li><a href="#">Redémarrer</a></li>
+          <li><a href="#">Thèmes</a></li>
+          <!-- <li><a href="#">Niveaux</a></li> -->
+          <li><a href="#">Règles</a></li>
         </ul>
       </div>
       <a href="#" id="openBtn">
@@ -42,29 +50,29 @@
           <img src="assets/www.jpg" alt="Montre l'image de la question">
         </div>
         <div class="boxQuestion">
-          <div class="question">question ?</div>
+          <div class="question">Question ?</div>
         </div>
       </section>
       <div class="timer"></div>
       <div class="reponse">
         <button class="reponseBox A"  value="reponseA">
-        reponse A
+        Reponse A
         </button>
         <button class="reponseBox B" value="reponseB">
-          reponse B
+          Reponse B
         </button>
         <button class="reponseBox C" value="reponseC">
-          reponse C
+          Reponse C
         </button>
         <button class="reponseBox D" value="reponseD">
-          reponse D
+          Reponse D
         </button>
       </div>
     </main>
     <footer class="bottom">
       <span><small>Contact</small></span>
       <span class="footerCenter"><small>Made by wilders</br>with love</small></span>
-      <span><small>infos</small></span>
+      <span><small>Infos</small></span>
     </footer>
     <script src="script.js"></script>
   </body>
