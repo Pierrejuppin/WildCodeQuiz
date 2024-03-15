@@ -9,6 +9,8 @@
 
 * {
   margin: 0;
+  font-family: "Anta", sans-serif;
+  color: white;
   /*  outline: solid 1px red; */
 }
 
@@ -28,7 +30,7 @@ body {
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5em;
+  margin-top: 4em;
   width: 98px;
   height: 76px;
 }
@@ -46,14 +48,14 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 79px;
+  margin-top: 59px;
   width: 295px;
   height: 230px;
   border-radius: 15px;
 }
 .userPseudoHome {
   display: flex;
-  margin-top: 79px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -71,7 +73,7 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 79px;
+  margin-top: 50px;
   width: 97px;
   height: 43px;
   background-color: var(--quizzBackgroundColor);
@@ -226,6 +228,8 @@ body {
   font-weight: bold;
   font-size: 4em;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
 /* Section Reponse */
