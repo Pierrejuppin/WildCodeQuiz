@@ -1,5 +1,4 @@
 :root {
-
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
   --homeBackgroundColor: #82c0ccff;
@@ -8,9 +7,10 @@
   --borderRadius: 15px;
 }
 
-
 * {
   margin: 0;
+  font-family: "Anta", sans-serif;
+  color: white;
   /*  outline: solid 1px red; */
 }
 
@@ -30,7 +30,7 @@ body {
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 5em;
+  margin-top: 4em;
   width: 98px;
   height: 76px;
 }
@@ -48,14 +48,14 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 79px;
+  margin-top: 59px;
   width: 295px;
   height: 230px;
   border-radius: 15px;
 }
 .userPseudoHome {
   display: flex;
-  margin-top: 79px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   justify-content: center;
@@ -73,7 +73,7 @@ body {
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 79px;
+  margin-top: 50px;
   width: 97px;
   height: 43px;
   background-color: var(--quizzBackgroundColor);
@@ -102,13 +102,12 @@ body {
   .goBtn {
     margin-top: 26px;
   }
-
 }
 
 /* HEADER menu  */
 
 .topPage {
-  margin:0.5em;
+  margin: 0.5em;
   display: flex;
   justify-content: space-between;
 }
@@ -132,10 +131,9 @@ body {
   border-radius: 50%;
 }
 
-
 /* MENU Burger */
 
-.menu{
+.menu {
   height: 100%;
   width: 20%;
   position: fixed;
@@ -152,7 +150,7 @@ body {
   text-decoration: none;
 
   font-size: 15px;
-  color:white;
+  color: white;
   display: block;
   transition: 0.3s;
 }
@@ -176,8 +174,7 @@ body {
   top: 0;
   right: 6em;
   font-size: 4em;
-} 
-
+}
 
 .burggerIcon span {
   display: block;
@@ -185,10 +182,11 @@ body {
   height: 5px;
   background-color: black;
   margin: 6px 0;
+}
 
 .burggerIcon img {
   width: 6em;
-  height: 3em; 
+  height: 3em;
 }
 
 /* Section Question */
@@ -229,7 +227,9 @@ body {
 .timer {
   font-weight: bold;
   font-size: 4em;
-  color: white
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 /* Section Reponse */
@@ -252,13 +252,12 @@ body {
   color: white;
   font-family: "Anta", sans-serif;
   font-size: 1em;
-  
 }
 
-.reponseBox:hover  {
+.reponseBox:hover {
   background-color: var(--homeBackgroundColor);
-  -webkit-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.7); 
-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.7);
 }
 
 /* footer */
@@ -301,5 +300,4 @@ box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
   border-left: solid 3px var(--borderColor);
   height: 66px;
   align-items: center;
-
 }
