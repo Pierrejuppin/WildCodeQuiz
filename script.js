@@ -17,12 +17,14 @@ function closeNav() {
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
 homeBody.style.backgroundColor = backgroundColorDoc;
+
 //ci dessous creation des variables pour display none la page du quiz avant selection du pseudo utilisateur//
+
 const headerDisplay = document.querySelector("header");
 const mainDisplay = document.querySelector("main");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
-// const hideHome = document.querySelector(".homeContainer");
+const hideHome = document.querySelector(".homeContainer");
 // hideHome.style.display = "none";
 
 function openNav() {
@@ -54,4 +56,20 @@ function timing() {
   timerElement.classList.console.log(".timer");
 }
 
-main;
+// ci dessous le passage de la page d'accueil -> Quizz//
+let bodyBackgroundColor = document.getElementById("background");
+let homeToQuiz = document.getElementsByClassName("goBtn");
+function openQuiz() {
+  hideHome.style.display = "none";
+  headerDisplay.style.display = "block";
+  mainDisplay.style.display = "block";
+  bodyBackgroundColor.style.backgroundColor = "#16697aff";
+}
+//ci dessous le retour à l'accueil avec le bouton "redémarrer"
+let quizToHome = document.getElementById("reStart");
+function goBackHome() {
+  hideHome.style.display = "block";
+  headerDisplay.style.display = "none";
+  mainDisplay.style.display = "none";
+  bodyBackgroundColor.style.backgroundColor = "#82c0ccff";
+}
