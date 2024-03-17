@@ -1,8 +1,3 @@
-@font-face {
-  font-family: "Anta";
-  src: url("assets/font/Anta-Regular.ttf");
-}
-
 :root {
 
   --quizzBackgroundColor: #16697aff;
@@ -13,21 +8,126 @@
   --borderRadius: 15px;
 }
 
-  *{
-    margin: 0;
-   /*  outline: solid 1px red; */
+@font-face {
+  font-family: "Anta";
+  src: url(assets/font/Anta-Regular.ttf);
+}
+
+* {
+  margin: 0;
+  font-family: "Anta", sans-serif;
+  color: white;
+  /*  outline: solid 1px red; */
+}
+
+body {
+  margin: 0;
+  background-color: var(--quizzBackgroundColor);
+}
+
+/* style de la page d'accueil */
+
+.homeContainerOfimg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--divBackgroundColor);
+  border: 3px solid var(--borderColor);
+  border-radius: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4em;
+  width: 98px;
+  height: 76px;
+}
+.imgOfHomeContainer {
+  height: 42px;
+  width: 38px;
+}
+
+.welcomeBox {
+  background-color: var(--divBackgroundColor);
+  display: flex;
+  border: 3px solid var(--borderColor);
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 59px;
+  width: 295px;
+  height: 230px;
+  border-radius: 15px;
+}
+
+#wild {
+  color: var(--quizzBackgroundColor);
+}
+
+#code {
+  color: #8F2D56;
+}
+
+#quizz {
+  color: var(--borderColor);
+}
+
+.userPseudoHome {
+  display: flex;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--divBackgroundColor);
+  border: 3px solid var(--borderColor);
+  border-radius: 15px;
+  width: 300px;
+  height: 42px;
+}
+.goBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  width: 97px;
+  height: 43px;
+  background-color: var(--quizzBackgroundColor);
+  border-radius: 15px;
+  border: solid 3px var(--borderColor);
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  .homeContainerOfimg {
+    width: 173px;
+    height: 143px;
+    margin-top: 41px;
   }
- 
- 
-  body {
-    font-family: "Anta", sans-serif;
-    background-color: var(--quizzBackgroundColor);
+  .imgOfHomeContainer {
+    height: 116px;
+    width: 126px;
+  }
+  .welcomeBox {
+    width: 696px;
+    height: 292px;
+    margin-top: 50px;
+  }
+  .userPseudoHome {
+    width: 414px;
+    height: 82px;
+  }
+  .goBtn {
+    margin-top: 26px;
+  }
 }
 
 /* HEADER menu  */
 
 .topPage {
-  margin:0.5em;
+  margin: 0.5em;
   display: flex;
   justify-content: space-between;
 }
@@ -53,9 +153,9 @@
 
 /* MENU Burger */
 
-.menu{
+.menu {
   height: 100%;
-  width: 25%;
+  width: 125px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -65,44 +165,51 @@
   transition: left 0.5s ease;
 }
 
-.menu a{
+.menu a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
+
   font-size: 15px;
-  color:white;
+  color: white;
   display: block;
   transition: 0.3s;
 }
 
-.menu a:hover{
+.menu a:hover {
   color: black;
 }
 
-.menu ul{
+.menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.menu.active{
-left: 0;
+.menu.active {
+  left: 0;
 }
 
-.menu.close{
+.menu.close {
   position: absolute;
   top: 0;
   right: 6em;
   font-size: 4em;
-} 
+}
+
+.burggerIcon span {
+  display: block;
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+}
 
 .burggerIcon img {
   width: 6em;
   height: 3em;
+  margin-left: 12px;
 }
 
-@media screen {
-  
-}
 /* Section Question */
 
 .zoneQuizz {
@@ -112,18 +219,17 @@ left: 0;
 }
 
 .zoneQuizz img {
-    width: 4.5rem;
-    height: 4.5rem;
-    border-radius: 15px 15px 0 0;
-    
-} 
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 15px 15px 0 0;
+}
 
 .boxQuestion {
   width: 70%;
-  height: 3.5rem;
+  height: 5rem;
   border-radius: var(--borderRadius);
   background-color: var(--divBackgroundColor);
-  border: 3px solid var(--borderColor) ;
+  border: 3px solid var(--borderColor);
   align-items: center;
 }
 
@@ -135,16 +241,25 @@ left: 0;
   align-items: center;
   justify-content: center;
   color: white;
+
   font-size: 1.2em;
+}
+
+.timer {
+  font-weight: bold;
+  font-size: 4em;
+  color: white;
+  display: flex;
+  justify-content: center;
 }
 
 /* Section Reponse */
 
 .reponse {
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .reponseBox {
@@ -158,25 +273,31 @@ left: 0;
   color: white;
   font-family: "Anta", sans-serif;
   font-size: 1em;
-  
+}
+@media screen and (min-width: 800px) {
+  .reponseBox {
+    height: 6em;
+  }
 }
 
-.reponseBox:hover  {
+.reponseBox:hover {
   background-color: var(--homeBackgroundColor);
-  -webkit-box-shadow: 9px 10px 5px 0px rgba(0,0,0,0.7); 
-box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
+  -webkit-box-shadow: 9px 10px 5px 0px rgba(0, 0, 0, 0.7);
+  box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.7);
 }
-
 
 /* footer */
-
 
 .bottom {
   background-color: var(--divBackgroundColor);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 15em; /*Régler le margin si vous venez de pull*/
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
   border-top: solid 5px var(--borderColor);
 }
 @media screen and (min-width: 800px) {
@@ -203,4 +324,6 @@ box-shadow: 4px 4px 5px 0px rgba(0,0,0,0.7);
 .footerCenter {
   border-right: solid 3px var(--borderColor);
   border-left: solid 3px var(--borderColor);
+  height: 40px;
+  align-items: center;
 }
