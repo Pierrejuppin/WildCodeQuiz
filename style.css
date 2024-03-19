@@ -1,10 +1,16 @@
 :root {
+
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
   --homeBackgroundColor: #82c0ccff;
   --borderColor: #ffa62bff;
   --textCodeColor: #8f2d56;
   --borderRadius: 15px;
+}
+
+@font-face {
+  font-family: "Anta";
+  src: url(assets/font/Anta-Regular.ttf);
 }
 
 * {
@@ -53,6 +59,19 @@ body {
   height: 230px;
   border-radius: 15px;
 }
+
+#wild {
+  color: var(--quizzBackgroundColor);
+}
+
+#code {
+  color: #8F2D56;
+}
+
+#quizz {
+  color: var(--borderColor);
+}
+
 .userPseudoHome {
   display: flex;
   margin-top: 20px;
@@ -79,6 +98,7 @@ body {
   background-color: var(--quizzBackgroundColor);
   border-radius: 15px;
   border: solid 3px var(--borderColor);
+  cursor: pointer;
 }
 @media screen and (min-width: 800px) {
   .homeContainerOfimg {
@@ -93,7 +113,7 @@ body {
   .welcomeBox {
     width: 696px;
     height: 292px;
-    margin-top: 76px;
+    margin-top: 50px;
   }
   .userPseudoHome {
     width: 414px;
@@ -135,7 +155,7 @@ body {
 
 .menu {
   height: 100%;
-  width: 20%;
+  width: 125px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -187,6 +207,7 @@ body {
 .burggerIcon img {
   width: 6em;
   height: 3em;
+  margin-left: 12px;
 }
 
 /* Section Question */
@@ -205,7 +226,7 @@ body {
 
 .boxQuestion {
   width: 70%;
-  height: 3.5rem;
+  height: 5rem;
   border-radius: var(--borderRadius);
   background-color: var(--divBackgroundColor);
   border: 3px solid var(--borderColor);
@@ -236,9 +257,9 @@ body {
 
 .reponse {
   display: grid;
-  gap: 4rem;
+  gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  margin-top: 3em;
+  margin-top: 2em;
 }
 
 .reponseBox {
@@ -252,6 +273,11 @@ body {
   color: white;
   font-family: "Anta", sans-serif;
   font-size: 1em;
+}
+@media screen and (min-width: 800px) {
+  .reponseBox {
+    height: 6em;
+  }
 }
 
 .reponseBox:hover {
@@ -271,7 +297,7 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 66px;
+  height: 40px;
   border-top: solid 5px var(--borderColor);
 }
 @media screen and (min-width: 800px) {
@@ -298,6 +324,6 @@ body {
 .footerCenter {
   border-right: solid 3px var(--borderColor);
   border-left: solid 3px var(--borderColor);
-  height: 66px;
+  height: 40px;
   align-items: center;
 }
