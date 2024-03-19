@@ -35,7 +35,6 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-//Timer//
 const startTimer = 5;
 let timer = startTimer * 60;
 
@@ -74,3 +73,67 @@ function goBackHome() {
   mainDisplay.style.display = "none";
   bodyBackgroundColor.style.backgroundColor = "#82c0ccff";
 }
+
+const quizData = [
+  {
+    question: "Qui a Racheté Ghithub l'an dernier ?",
+    options: ["Apple", "Microsoft", "IBM", "Google"],
+    answer: "Microsoft"
+  },
+  {
+    question: "Que signifie W.W.W  ?",
+    options: ["Wide Word Web", "Web World Wide","Word Wide Web", "Web Wide World"],
+    answer: "Word Wide Web"
+  },
+  {
+    question: "Que signifie I.P ?",
+    options: ["Internet Protocol", "Yip Kai-man", "Informatique Protocol", "International Protocol"],
+    answer: "Internet Protocol"
+  }
+];
+
+const questionQuiz = document.querySelector(".question");
+const responseQuiz = document.querySelectorAll(".reponse button");
+const scoreQuiz = document.querySelector(".boxScore");
+let nowQuestionIndex = 0;
+let score = 0;
+
+
+function displayNowQuestion() {
+  const nowQuestion = quizData[nowQuestionIndex];
+    questionQuiz.textContent = nowQuestion.question;
+    nowQuestion.options.forEach((option, index) => {
+    responseQuiz[index].textContent = option;
+  });
+}
+
+function updateScore() {
+  scoreQuiz.textContent = `${score}/10`;
+}
+
+function checkAnswer(selectedAnswer) {
+  const nowQuestion = quizData[nowQuestionIndex];
+  if (selectedAnswer === nowQuestion.answer) {
+    score++;
+    
+    updateScore();
+  }  else {
+    updateScore();
+  
+  } 
+  
+  nowQuestionIndex++;
+  if (nowQuestionIndex < quizData.length) {
+    displayNowQuestion();
+  
+  }
+  //else {}
+}
+
+window.onload = displayNowQuestion; 
+
+responseQuiz.forEach(button => {
+  button.addEventListener("click", function() {
+    checkAnswer(this.textContent);
+  });
+});
