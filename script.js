@@ -35,36 +35,43 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-const startTimer = 5;
-let timer = startTimer * 60;
-
-const timerElement = document.querySelector(".timer");
-
-setInterval(timing, 1000);
-
-function timing() {
-  const temps = 300;
-  let minutes = parseInt(temps / 60, 10);
-  let secondes = parseInt(temps % 60, 10);
-
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  secondes = secondes < 10 ? "0" + secondes : secondes;
-
-  timerElement.innerText = `${minutes}:${secondes}`;
-  temps = temps <= 0 ? 0 : temps - 1;
-
-  timerElement.classList.console.log(".timer");
-}
 
 // ci dessous le passage de la page d'accueil -> Quizz//
 let bodyBackgroundColor = document.getElementById("background");
-let homeToQuiz = document.getElementsByClassName("goBtn");
+let homeToQuiz = document.getElementsByClassName("goBtn").getElementById("goBtn").addEventListener("goBtn",startTimer);
 function openQuiz() {
   hideHome.style.display = "none";
   headerDisplay.style.display = "block";
   mainDisplay.style.display = "block";
   bodyBackgroundColor.style.backgroundColor = "#16697aff";
+
 }
+
+//Timer//
+const startTimer = 5;
+let timer = startTimer * 60;
+
+const timerElement = document.querySelector(".timer");
+
+const intervalId = setInterval(timing, 1000);
+
+function timing() {
+  let minutes = parseInt(timer / 60, 10);
+  let secondes = parseInt(timer % 60, 10);
+
+  minutes = minutes < 10 ? "0" + minutes : minutes;
+  secondes = secondes < 10 ? "0" + secondes : secondes;
+
+  timerElement.innerText = `${minutes}:${secondes}`;
+  timer--;
+
+  if (timer < 0) {
+    clearInterval(intervalId);
+    timerElement.innerText = "00:00";
+
+}
+
+
 //ci dessous le retour à l'accueil avec le bouton "redémarrer"
 let quizToHome = document.getElementById("reStart");
 function goBackHome() {
