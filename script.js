@@ -74,68 +74,66 @@ function goBackHome() {
   bodyBackgroundColor.style.backgroundColor = "#82c0ccff";
 }
 
-let quizData= {
-    quiz1 : {
-        question : "la question1 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz2 : {
-        question : "la question2 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz3 : {
-        question : "la question3 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz4 : {
-        question : "la question4 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz5 : {
-        question : "la question5 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz6 : {
-        question : "la question6 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz7 : {
-        question : "la question7 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz8 : {
-        question : "la question8 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz9 : {
-        question : "la question9 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
-    quiz10 : {
-        question : "la question10 ???????",
-        reponse : "la reponse",
-        option : ["q2?","q1?", "q3?"],
-        },
+const quizData = [
+  {
+    question: "Qui a Racheté Ghithub l'an dernier ?",
+    options: ["Apple", "Microsoft", "IBM", "Google"],
+    answer: "Microsoft"
+  },
+  {
+    question: "Que signifie W.W.W  ?",
+    options: ["Wide Word Web", "Web World Wide","Word Wide Web", "Web Wide World"],
+    answer: "Word Wide Web"
+  },
+  {
+    question: "Que signifie I.P ?",
+    options: ["Internet Protocol", "Yip Kai-man", "Informatique Protocol", "International Protocol"],
+    answer: "Internet Protocol"
+  }
+];
+
+const questionQuiz = document.querySelector(".question");
+const responseQuiz = document.querySelectorAll(".reponse button");
+const scoreQuiz = document.querySelector(".boxScore");
+let nowQuestionIndex = 0;
+let score = 0;
+
+
+function displayNowQuestion() {
+  const nowQuestion = quizData[nowQuestionIndex];
+    questionQuiz.textContent = nowQuestion.question;
+    nowQuestion.options.forEach((option, index) => {
+    responseQuiz[index].textContent = option;
+  });
 }
 
+function updateScore() {
+  scoreQuiz.textContent = `${score}/10`;
+}
 
-let question = document.querySelector(".question");
-let quiz = document.createElement("div");
-quiz.textContent = quizData.quiz6.question;
-question.appendChild(quiz);
+function checkAnswer(selectedAnswer) {
+  const nowQuestion = quizData[nowQuestionIndex];
+  if (selectedAnswer === nowQuestion.answer) {
+    score++;
+    
+    updateScore();
+  }  else {
+    updateScore();
+  
+  } 
+  
+  nowQuestionIndex++;
+  if (nowQuestionIndex < quizData.length) {
+    displayNowQuestion();
+  
+  }
+  //else {}
+}
 
-let answer6answer = document.querySelector(".reponseQA");
-let answerA = document.createElement("div");
-answerA.textContent = quizData.quiz6.reponse;
-answer6answer.appendChild(answerA);
+window.onload = displayNowQuestion; 
 
-
+responseQuiz.forEach(button => {
+  button.addEventListener("click", function() {
+    checkAnswer(this.textContent);
+  });
+});
