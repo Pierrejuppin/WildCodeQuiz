@@ -24,7 +24,6 @@ const headerDisplay = document.querySelector("header");
 const mainDisplay = document.querySelector("main");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
-
 const hideHome = document.querySelector(".homeContainer");
 // hideHome.style.display = "none";
 
@@ -36,7 +35,6 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-//Timer//
 const startTimer = 5;
 let timer = startTimer * 60;
 
