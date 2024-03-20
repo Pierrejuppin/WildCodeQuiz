@@ -18,14 +18,12 @@ const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
 homeBody.style.backgroundColor = backgroundColorDoc;
 
-//ci dessous creation des variables pour display none la page du quiz avant selection du pseudo utilisateur//
-
+//ci dessous creation des const pour display none la page du quiz avant selection du pseudo utilisateur//
 const headerDisplay = document.querySelector("header");
 const mainDisplay = document.querySelector("main");
+const hideHome = document.querySelector(".homeContainer");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
-const hideHome = document.querySelector(".homeContainer");
-// hideHome.style.display = "none";
 
 function openNav() {
   menuB.classList.add("active");
@@ -35,7 +33,21 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-const timerElement = document.querySelector(".timer");
+let bodyBackgroundColor = document.getElementById("background");
+let homeToQuiz = document.querySelectorAll(".buttonOpenQuizz");
+for (let i = 0; i < homeToQuiz.length; i++) {
+  homeToQuiz[i].addEventListener("click", function () {
+    hideHome.style.display = "none";
+    headerDisplay.style.display = "block";
+    mainDisplay.style.display = "block";
+    bodyBackgroundColor.style.backgroundColor = "#16697aff";
+    if (mainDisplay.style.display === "block") {
+      const fiveMinutes = 60 * 5,
+        display = document.querySelector(".timer");
+      startTimer(fiveMinutes, display);
+    }
+  });
+}
 
 function startTimer(duration, display) {
   let theTimer = duration,
@@ -56,39 +68,16 @@ function startTimer(duration, display) {
   }, 1000);
 }
 
-// if ( headerDisplay.style.display === "block" || mainDisplay.style.display =="block" =>
-
 window.onload = function () {
-  const fiveMinutes = 60 * 5,
-    display = document.querySelector(".timer");
-  startTimer(fiveMinutes, display);
+  displayNowQuestion();
 };
-
-// ci dessous le passage de la page d'accueil -> Quizz//
-let bodyBackgroundColor = document.getElementById("background");
-let homeToQuiz = document.getElementsByClassName("goBtn");
-function openQuiz() {
-  hideHome.style.display = "none";
-  headerDisplay.style.display = "block";
-  mainDisplay.style.display = "block";
-  bodyBackgroundColor.style.backgroundColor = "#16697aff";
-}
-//ci dessous le retour à l'accueil avec le bouton "redémarrer"
-let quizToHome = document.getElementById("reStart");
-function goBackHome() {
-  hideHome.style.display = "block";
-  headerDisplay.style.display = "none";
-  mainDisplay.style.display = "none";
-  bodyBackgroundColor.style.backgroundColor = "#82c0ccff";
-}
-
-//ci dessous le tableau d'images ansi que la boucle permettant leur défilement
 
 const quizData = [
   {
     question: "1. Qui a Racheté Ghithub l'an dernier ?",
     options: ["Apple", "Microsoft", "IBM", "Google"],
     answer: "Microsoft",
+    image: (src = "assets/GIT.jpg"),
   },
   {
     question: "2. Que signifie W.W.W  ?",
@@ -99,6 +88,7 @@ const quizData = [
       "Web Wide World",
     ],
     answer: "World Wide Web",
+    image: (src = "assets/www.jpg"),
   },
   {
     question: "3. Que signifie I.P ?",
@@ -109,11 +99,13 @@ const quizData = [
       "International Protocol",
     ],
     answer: "Internet Protocol",
+    image: (src = "assets/IP.jpg"),
   },
   {
     question: "4. Quand est née officielement Internet?",
     options: ["1988", "1989", "1982", "1990"],
     answer: "1989",
+    image: (src = "assets/naissanceWeb.jpg"),
   },
   {
     question: "5. Que veut dire l'acronyme du site MDN?",
@@ -124,21 +116,25 @@ const quizData = [
       "Mozilla Developer Network",
     ],
     answer: "Mozilla Developer Network",
+    image: (src = "assets/mdn.jpg"),
   },
   {
     question: "6. Laquelle de ces propositions n'est pas un navigateur?",
     options: ["WaterFox", "MagellaNet", "Vivaldi", "Brave"],
     answer: "MagellaNet",
+    image: (src = "assets/navigateur.jpg"),
   },
   {
     question: "7. Qui est le créateur de JavaScript?",
     options: ["Brendan Peich", "Brendan Eich", "Jordan Eich", "Jordan Peich"],
     answer: "Brendan Eich",
+    image: (src = "assets/createur javascript.jpg"),
   },
   {
     question: "8. En quelle année est sortie la première version JavaScript?",
     options: ["1995", "1997", "1998", "1996"],
     answer: "1996",
+    image: (src = "assets/javascript.jpg"),
   },
   {
     question: "9. Qui est le créateur de PHP?",
@@ -149,11 +145,13 @@ const quizData = [
       "Peter Heins-Pazultek",
     ],
     answer: "Rasmus Lerdorf",
+    image: (src = "assets/php.jpg"),
   },
   {
     question: "10. En quelle année PHP a Officiellement été rendu publique?",
     options: ["1994", "1995", "1996", "1994"],
     answer: "1995",
+    image: (src = "assets/lastphp.jpg"),
   },
 ];
 
@@ -194,8 +192,6 @@ function checkAnswer(selectedAnswer) {
   }
   //else {}
 }
-
-//window.onload = displayNowQuestion;
 
 responseQuiz.forEach((button) => {
   button.addEventListener("click", function () {
