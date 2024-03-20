@@ -92,9 +92,11 @@ const quizData = [
   }
 ];
 
-const questionQuiz = document.querySelector(".question");
-const responseQuiz = document.querySelectorAll(".reponse button");
-const scoreQuiz = document.querySelector(".boxScore");
+
+const questionQuiz = document.querySelector('.question');
+const responseQuiz = document.querySelectorAll('.reponse button');
+const scoreQuiz = document.querySelector('.boxScore');
+
 let nowQuestionIndex = 0;
 let score = 0;
 
@@ -115,25 +117,25 @@ function checkAnswer(selectedAnswer) {
   const nowQuestion = quizData[nowQuestionIndex];
   if (selectedAnswer === nowQuestion.answer) {
     score++;
+    updateScore();
     
+  } else {
     updateScore();
-  }  else {
-    updateScore();
-  
-  } 
+    
+  }
   
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
     displayNowQuestion();
-  
-  }
+  } 
   //else {}
+
 }
 
 window.onload = displayNowQuestion; 
 
 responseQuiz.forEach(button => {
-  button.addEventListener("click", function() {
+  button.addEventListener('click', function() {
     checkAnswer(this.textContent);
   });
 });
