@@ -160,7 +160,7 @@ const quizData = [
 const questionQuiz = document.querySelector(".question");
 const responseQuiz = document.querySelectorAll(".reponse button");
 const scoreQuiz = document.querySelector(".boxScore");
-//IMG POUR LE QUIZZ
+const imageQuiz = document.getElementById("questionImage");
 
 let nowQuestionIndex = 0;
 let score = 0;
@@ -168,6 +168,7 @@ let score = 0;
 function displayNowQuestion() {
   const nowQuestion = quizData[nowQuestionIndex];
   questionQuiz.textContent = nowQuestion.question;
+  imageQuiz.src = nowQuestion.image;
   nowQuestion.options.forEach((option, index) => {
     responseQuiz[index].textContent = option;
   });
