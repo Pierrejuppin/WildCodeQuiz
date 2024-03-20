@@ -128,9 +128,12 @@ const quizData = [
 
 ];
 
-const questionQuiz = document.querySelector(".question");
-const responseQuiz = document.querySelectorAll(".reponse button");
-const scoreQuiz = document.querySelector(".boxScore");
+
+const questionQuiz = document.querySelector('.question');
+const responseQuiz = document.querySelectorAll('.reponse button');
+const scoreQuiz = document.querySelector('.boxScore');
+const imageQuiz = document.getElementById("questionImage");
+
 let nowQuestionIndex = 0;
 let score = 0;
 
@@ -138,6 +141,7 @@ let score = 0;
 function displayNowQuestion() {
   const nowQuestion = quizData[nowQuestionIndex];
     questionQuiz.textContent = nowQuestion.question;
+    imageQuiz.src = nowQuestion.image;
     nowQuestion.options.forEach((option, index) => {
     responseQuiz[index].textContent = option;
   });
@@ -162,15 +166,15 @@ function checkAnswer(selectedAnswer) {
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
     displayNowQuestion();
-  
-  }
+  } 
   //else {}
+
 }
 
 window.onload = displayNowQuestion; 
 
 responseQuiz.forEach(button => {
-  button.addEventListener("click", function() {
+  button.addEventListener('click', function() {
     checkAnswer(this.textContent);
   });
 });
