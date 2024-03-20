@@ -35,26 +35,34 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-const startTimer = 5;
-let timer = startTimer * 60;
-
 const timerElement = document.querySelector(".timer");
 
-setInterval(timing, 1000);
+function startTimer(duration, display) {
+  let theTimer = duration,
+    minutes,
+    seconds;
+  setInterval(function () {
+    minutes = parseInt(theTimer / 60, 10);
+    seconds = parseInt(theTimer % 60, 10);
 
-function timing() {
-  const temps = 300;
-  let minutes = parseInt(temps / 60, 10);
-  let secondes = parseInt(temps % 60, 10);
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
 
-  minutes = minutes < 10 ? "0" + minutes : minutes;
-  secondes = secondes < 10 ? "0" + secondes : secondes;
+    display.textContent = minutes + ":" + seconds;
 
-  timerElement.innerText = `${minutes}:${secondes}`;
-  temps = temps <= 0 ? 0 : temps - 1;
-
-  timerElement.classList.console.log(".timer");
+    if (--theTimer < 0) {
+      theTimer = duration;
+    }
+  }, 1000);
 }
+
+// if ( headerDisplay.style.display === "block" || mainDisplay.style.display =="block" =>
+
+window.onload = function () {
+  const fiveMinutes = 60 * 5,
+    display = document.querySelector(".timer");
+  startTimer(fiveMinutes, display);
+};
 
 // ci dessous le passage de la page d'accueil -> Quizz//
 let bodyBackgroundColor = document.getElementById("background");
@@ -74,35 +82,48 @@ function goBackHome() {
   bodyBackgroundColor.style.backgroundColor = "#82c0ccff";
 }
 
+//ci dessous le tableau d'images ansi que la boucle permettant leur défilement
+
 const quizData = [
   {
     question: "Qui a Racheté Ghithub l'an dernier ?",
     options: ["Apple", "Microsoft", "IBM", "Google"],
-    answer: "Microsoft"
+    answer: "Microsoft",
   },
   {
     question: "Que signifie W.W.W  ?",
-    options: ["Wide Word Web", "Web World Wide","Word Wide Web", "Web Wide World"],
-    answer: "Word Wide Web"
+    options: [
+      "Wide Word Web",
+      "Web World Wide",
+      "World Wide Web",
+      "Willy West World",
+    ],
+    answer: "World Wide Web",
   },
   {
     question: "Que signifie I.P ?",
-    options: ["Internet Protocol", "Yip Kai-man", "Informatique Protocol", "International Protocol"],
-    answer: "Internet Protocol"
-  }
+    options: [
+      "Internet Protocol",
+      "Yip Kai-man",
+      "Informatique Protocol",
+      "International Protocol",
+    ],
+    answer: "Internet Protocol",
+  },
 ];
 
 const questionQuiz = document.querySelector(".question");
 const responseQuiz = document.querySelectorAll(".reponse button");
 const scoreQuiz = document.querySelector(".boxScore");
+//IMG POUR LE QUIZZ
+
 let nowQuestionIndex = 0;
 let score = 0;
 
-
 function displayNowQuestion() {
   const nowQuestion = quizData[nowQuestionIndex];
-    questionQuiz.textContent = nowQuestion.question;
-    nowQuestion.options.forEach((option, index) => {
+  questionQuiz.textContent = nowQuestion.question;
+  nowQuestion.options.forEach((option, index) => {
     responseQuiz[index].textContent = option;
   });
 }
@@ -115,25 +136,23 @@ function checkAnswer(selectedAnswer) {
   const nowQuestion = quizData[nowQuestionIndex];
   if (selectedAnswer === nowQuestion.answer) {
     score++;
-    
+
     updateScore();
-  }  else {
+  } else {
     updateScore();
-  
-  } 
-  
+  }
+
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
     displayNowQuestion();
-  
   }
   //else {}
 }
 
-window.onload = displayNowQuestion; 
+//window.onload = displayNowQuestion;
 
-responseQuiz.forEach(button => {
-  button.addEventListener("click", function() {
+responseQuiz.forEach((button) => {
+  button.addEventListener("click", function () {
     checkAnswer(this.textContent);
   });
 });
