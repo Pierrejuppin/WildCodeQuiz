@@ -76,20 +76,56 @@ function goBackHome() {
 
 const quizData = [
   {
-    question: "Qui a Racheté Ghithub l'an dernier ?",
+    question: "1. Qui a Racheté Ghithub l'an dernier ?",
     options: ["Apple", "Microsoft", "IBM", "Google"],
     answer: "Microsoft"
   },
   {
-    question: "Que signifie W.W.W  ?",
-    options: ["Wide Word Web", "Web World Wide","Word Wide Web", "Web Wide World"],
-    answer: "Word Wide Web"
+    question: "2. Que signifie W.W.W  ?",
+    options: ["Wide World Web", "Web World Wide","World Wide Web", "Web Wide World"],
+    answer: "World Wide Web"
   },
   {
-    question: "Que signifie I.P ?",
+    question: "3. Que signifie I.P ?",
     options: ["Internet Protocol", "Yip Kai-man", "Informatique Protocol", "International Protocol"],
     answer: "Internet Protocol"
-  }
+  },
+  {
+    question: "4. Quand est née officielement Internet?",
+    options: ["1988","1989","1982","1990"],
+    answer: "1989",
+  },
+  {
+    question: "5. Que veut dire l'acronyme du site MDN?",
+    options: ["Médiathèque Départementale du Nord","Mozilla Div Nav","Mozilla Dossier Neuf","Mozilla Developer Network"],
+    answer: "Mozilla Developer Network" ,
+  },
+  {
+    question: "6. Laquelle de ces propositions n'est pas un navigateur?",
+    options: ["WaterFox","MagellaNet","Vivaldi","Brave"],
+    answer: "MagellaNet" ,
+  },
+  {
+    question: "7. Qui est le créateur de JavaScript?",
+    options: ["Brendan Peich","Brendan Eich","Jordan Eich","Jordan Peich"],
+    answer: "Brendan Eich",
+  },
+  {
+    question: "8. En quelle année est sortie la première version JavaScript?",
+    options: ["1995","1997","1998","1996"],
+    answer: "1996" ,
+  },
+  {
+    question: "9. Qui est le créateur de PHP?",
+    options: ["Rasmus Lerdorf","Rasmus Lesdorf","Rasmus Php","Peter Heins-Pazultek"],
+    answer: "Rasmus Lerdorf" ,
+  },
+  {
+    question: "10. En quelle année PHP a Officiellement été rendu publique?",
+    options: ["1994","1995","1996","1994"],
+    answer: "1995",
+  },
+
 ];
 
 
@@ -117,12 +153,22 @@ function checkAnswer(selectedAnswer) {
   const nowQuestion = quizData[nowQuestionIndex];
   if (selectedAnswer === nowQuestion.answer) {
     score++;
+<<<<<<< HEAD
     updateScore();
     
   } else {
     updateScore();
     
   }
+=======
+
+    updateScore();
+  }  
+  else {
+    updateScore();
+  
+  } 
+>>>>>>> eb43906e7b72de01964926f6c68ab7f56db3833d
   
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
