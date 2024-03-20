@@ -5,14 +5,6 @@ const closeBtn = document.querySelector("#closeBtn");
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 
-function openNav() {
-  menu.classList.add("active");
-}
-
-function closeNav() {
-  menu.classList.remove("active");
-}
-
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
@@ -28,7 +20,7 @@ const hideHome = document.querySelector(".homeContainer");
 // hideHome.style.display = "none";
 
 function openNav() {
-  menuB.classList.add("active");
+  menuB.classList.remove("active");
 }
 
 function closeNav() {
@@ -174,3 +166,8 @@ responseQuiz.forEach(button => {
     checkAnswer(this.textContent);
   });
 });
+
+responseQuiz.addEventListener("click", pushButton);
+function pushButton() {
+  responseQuiz.style.boxShadow = "none";
+};
