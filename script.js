@@ -155,18 +155,20 @@ const quizData = [
   },
 ];
 
-<<<<<<< HEAD
-
-=======
->>>>>>> bfaf01b919a6e514ee83e43360fcf927e5b36bb3
 const questionQuiz = document.querySelector(".question");
 const responseQuiz = document.querySelectorAll(".reponse button");
 const scoreQuiz = document.querySelector(".boxScore");
-const imageQuiz = document.getElementById("questionImage");
-/* const pseudo = document.getElementById("pseudo").value; */
+const imageQuiz = documents.getElementById("questionImage");
+/* const form = document.querySelector("#formQuiz"); */
 
 let nowQuestionIndex = 0;
 let score = 0;
+
+/* form.addEventListener("submit", (event) => {
+      event.preventDefault();
+}
+); */
+
 
 function displayNowQuestion() {
   const nowQuestion = quizData[nowQuestionIndex];
@@ -185,7 +187,6 @@ function checkAnswer(selectedAnswer) {
   const nowQuestion = quizData[nowQuestionIndex];
   if (selectedAnswer === nowQuestion.answer) {
     score++;
-<<<<<<< HEAD
        updateScore();
      }  
   else {
@@ -197,7 +198,7 @@ function checkAnswer(selectedAnswer) {
           displayNowQuestion();
         } 
   else {
-          alert(`Bravo ! ${score}/10`);
+          alert(`Bravo ! ${form} ${score}/10`);
        }
 
 }
@@ -207,23 +208,6 @@ window.onload = displayNowQuestion;
 
 responseQuiz.forEach(button => {
   button.addEventListener("click", function() {
-=======
-
-    updateScore();
-  } else {
-    updateScore();
-  }
-
-  nowQuestionIndex++;
-  if (nowQuestionIndex < quizData.length) {
-    displayNowQuestion();
-  }
-  //else {}
-}
-
-responseQuiz.forEach((button) => {
-  button.addEventListener("click", function () {
->>>>>>> bfaf01b919a6e514ee83e43360fcf927e5b36bb3
     checkAnswer(this.textContent);
   });
 });
