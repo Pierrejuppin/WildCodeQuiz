@@ -5,6 +5,15 @@ const closeBtn = document.querySelector("#closeBtn");
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 
+function openNav() {
+  menuB.classList.remove("active");
+}
+
+function closeNav() {
+  menuB.classList.remove("active");
+}
+
+
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
@@ -17,13 +26,6 @@ const hideHome = document.querySelector(".homeContainer");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
 
-function openNav() {
-  menuB.classList.remove("active");
-}
-
-function closeNav() {
-  menuB.classList.remove("active");
-}
 
 let bodyBackgroundColor = document.getElementById("background");
 let homeToQuiz = document.querySelectorAll(".buttonOpenQuizz");
@@ -134,8 +136,7 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",
-    ],
+      "Peter Heins-Pazultek",],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
@@ -144,6 +145,12 @@ const quizData = [
     options: ["1994", "1995", "1996", "1994"],
     answer: "1995",
     image: (src = "assets/lastphp.jpg"),
+  },
+  {
+    question: `Bravo ${score}`,
+    option: ["","","",""],
+    answer: "5",
+    image: (src = '#'),
   },
 ];
 
