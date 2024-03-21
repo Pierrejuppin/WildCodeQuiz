@@ -98,8 +98,8 @@ body {
   background-color: var(--quizzBackgroundColor);
   border-radius: 15px;
   border: solid 3px var(--borderColor);
-  cursor: pointer;
 }
+
 @media screen and (min-width: 800px) {
   .homeContainerOfimg {
     width: 173px;
