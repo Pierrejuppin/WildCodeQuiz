@@ -4,9 +4,8 @@ const closeBtn = document.querySelector("#closeBtn");
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
-
 function openNav() {
-  menuB.classList.remove("active");
+  menuB.classList.add("active");
 }
 
 function closeNav() {
@@ -26,11 +25,11 @@ const hideHome = document.querySelector(".homeContainer");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
 
-
 let bodyBackgroundColor = document.getElementById("background");
 let homeToQuiz = document.querySelectorAll(".buttonOpenQuizz");
 for (let i = 0; i < homeToQuiz.length; i++) {
-  homeToQuiz[i].addEventListener("click", function () {
+  homeToQuiz[i].addEventListener("submit", function (event) {
+    event.preventDefault();
     hideHome.style.display = "none";
     headerDisplay.style.display = "block";
     mainDisplay.style.display = "block";
@@ -188,8 +187,15 @@ function checkAnswer(selectedAnswer) {
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
     displayNowQuestion();
+  } else {
+    const headerDisplay = document.querySelector("header");
+    const mainDisplay = document.querySelector("main");
+    const hideHome = document.querySelector(".homeContainer");
+    hideHome.style.display = "block";
+    headerDisplay.style.display = "none";
+    mainDisplay.style.display = "none";
+    //ici modification texte de fin de quizz à ajouter
   }
-  //else {}
 }
 
 responseQuiz.forEach((button) => {
