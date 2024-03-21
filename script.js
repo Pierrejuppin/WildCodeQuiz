@@ -34,7 +34,7 @@ for (let i = 0; i < homeToQuiz.length; i++) {
     mainDisplay.style.display = "block";
     bodyBackgroundColor.style.backgroundColor = "#16697aff";
     if (mainDisplay.style.display === "block") {
-      const fiveMinutes = 60 * 5,
+      const fiveMinutes = 60 * 2,
         display = document.querySelector(".timer");
       startTimer(fiveMinutes, display);
     }

@@ -1,5 +1,4 @@
 :root {
-
   --quizzBackgroundColor: #16697aff;
   --divBackgroundColor: #489fb5ff;
   --homeBackgroundColor: #82c0ccff;
@@ -62,10 +61,11 @@ body {
 
 #wild {
   color: var(--quizzBackgroundColor);
+  text-decoration: 3px solid red;
 }
 
 #code {
-  color: #8F2D56;
+  color: #8f2d56;
 }
 
 #quizz {
