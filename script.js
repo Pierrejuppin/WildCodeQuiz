@@ -12,6 +12,7 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
+
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
@@ -134,8 +135,7 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",
-    ],
+      "Peter Heins-Pazultek",],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
@@ -185,9 +185,20 @@ function checkAnswer(selectedAnswer) {
     const headerDisplay = document.querySelector("header");
     const mainDisplay = document.querySelector("main");
     const hideHome = document.querySelector(".homeContainer");
+    const buttonOff = document.querySelector(".goBtn");
+    const textAreaOff = document.querySelector(".userPseudoHome");
+    const winQuiz = document.querySelector("#title");
+    const winBack = document.querySelector(".welcomeBox");
+
     hideHome.style.display = "block";
     headerDisplay.style.display = "none";
     mainDisplay.style.display = "none";
+    buttonOff.style.display = "none";
+    textAreaOff.style.display = "none";
+    winQuiz.innerText = `Bravo !\n Vous avez ${score}/10 `;
+    winBack.style.backgroundImage = "url(assets/EndImage.jpg)";
+    winBack.style.backgroundSize = "100% 100%";
+
     //ici modification texte de fin de quizz à ajouter
   }
 }
