@@ -4,13 +4,12 @@ const closeBtn = document.querySelector("#closeBtn");
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
-
 function openNav() {
-  menu.classList.add("active");
+  menuB.classList.add("active");
 }
 
 function closeNav() {
-  menu.classList.remove("active");
+  menuB.classList.remove("active");
 }
 
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
@@ -25,18 +24,11 @@ const hideHome = document.querySelector(".homeContainer");
 headerDisplay.style.display = "none";
 mainDisplay.style.display = "none";
 
-function openNav() {
-  menuB.classList.add("active");
-}
-
-function closeNav() {
-  menuB.classList.remove("active");
-}
-
 let bodyBackgroundColor = document.getElementById("background");
 let homeToQuiz = document.querySelectorAll(".buttonOpenQuizz");
 for (let i = 0; i < homeToQuiz.length; i++) {
-  homeToQuiz[i].addEventListener("click", function () {
+  homeToQuiz[i].addEventListener("submit", function (event) {
+    event.preventDefault();
     hideHome.style.display = "none";
     headerDisplay.style.display = "block";
     mainDisplay.style.display = "block";
@@ -195,12 +187,16 @@ function checkAnswer(selectedAnswer) {
         
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
-          displayNowQuestion();
-        } 
-  else {
-          alert(`Bravo ! ${form} ${score}/10`);
-       }
-
+    displayNowQuestion();
+  } else {
+    const headerDisplay = document.querySelector("header");
+    const mainDisplay = document.querySelector("main");
+    const hideHome = document.querySelector(".homeContainer");
+    hideHome.style.display = "block";
+    headerDisplay.style.display = "none";
+    mainDisplay.style.display = "none";
+    //ici modification texte de fin de quizz à ajouter
+  }
 }
 
 window.onload = displayNowQuestion;
