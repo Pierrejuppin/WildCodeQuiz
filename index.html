@@ -12,16 +12,16 @@
     <link rel="stylesheet" href="style.css" />
     <title>Wild Code Quizz</title>
   </head>
-  <body id="background">
-    <div class="homeContainer">
+  <body id="background" class="buttonOpenQuizz">
+    <div class="homeContainer buttonOpenQuizz">
       <div class="homeContainerOfimg"><img class="imgOfHomeContainer" src="assets/apple-touch-icon-180x180.png"/></div>
     <div class="welcomeBox"><h1>Bienvenue sur le
     <br /> <span id="wild">Wild</span> <span id="code">Code</span> <span id="quizz">Quizz</span></h1>
     </div>
-      <input class="userPseudoHome" type="text" value="" placeholder="Entrer votre pseudo ici" >
-    <button type="button" class="goBtn" onclick="openQuiz ()">GO</button>
+    <textarea class="userPseudoHome">Entrer votre pseudo ici</textarea>
+    <button type="submit" class="goBtn  buttonOpenQuizz" onclick="openQuiz(),displayNowQuestion()">GO</button>
   </div>
-    <header>
+    <header class ="buttonOpenQuizz">
       <div class="topPage">
       <div class="logo"><img src="assets/apple-touch-icon-180x180.png" alt="Logo Wild Code Quiz"></div>      
       <div class="boxScore"> 0/10</div>
@@ -29,7 +29,7 @@
     <div id="menuBurgger" class="menu">
       <a id="closeBtn" href="#" class="close">X</a>
         <ul>
-          <li><a href="index.html" id="reStart" onclick="goBackHome()">Redémarrer</a></li>
+          <li><a href="index.html" id="reStart">Redémarrer</a></li>
           <li><a href="#">Thèmes</a></li>
           <!-- <li><a href="#">Niveaux</a></li> -->
           <li><a href="#">Règles</a></li>
@@ -41,10 +41,10 @@
         </div>
       </a>
     </header>
-    <main>
+    <main class="buttonOpenQuizz">
       <section class="zoneQuizz">
         <div class="imageQuestion">
-          <img src="assets/www.jpg" alt="Montre l'image de la question">
+          <img id="questionImage" src="assets/www.jpg" alt="Montre l'image de la question">
         </div>
         <div class="boxQuestion">
           <div class="question">Question ?</div>
