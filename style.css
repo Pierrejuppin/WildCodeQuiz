@@ -219,11 +219,17 @@ body {
 }
 
 .zoneQuizz img {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 9.5rem;
+  height: 9.5rem;
   border-radius: 15px 15px 0 0;
 }
-
+@media screen and (min-width: 900px) {
+  .zoneQuizz img {
+    width: 15.5rem;
+    height: 15.5rem;
+    margin-top: -7em;
+  }
+}
 .boxQuestion {
   width: 70%;
   height: 5rem;
@@ -308,16 +314,16 @@ body {
 .bottom span {
   display: flex;
   justify-content: center;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
+  padding-left: 0.6em;
+  padding-right: 0.6em;
   margin-right: 1em;
   text-align: center;
   max-height: 65ch;
 }
 @media screen and (min-width: 800px) {
   .bottom span {
-    padding-right: 8em;
-    padding-left: 8em;
+    padding-right: 5em;
+    padding-left: 5em;
   }
 }
 
@@ -326,4 +332,7 @@ body {
   border-left: solid 3px var(--borderColor);
   height: 40px;
   align-items: center;
+}
+#freeOfUse {
+  text-decoration: none;
 }

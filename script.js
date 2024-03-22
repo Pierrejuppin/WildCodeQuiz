@@ -12,7 +12,6 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
@@ -135,7 +134,8 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",],
+      "Peter Heins-Pazultek",
+    ],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
