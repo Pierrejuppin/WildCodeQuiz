@@ -112,7 +112,6 @@ body {
   }
   .welcomeBox {
     width: 696px;
-    height: 292px;
     margin-top: 50px;
   }
   .userPseudoHome {
@@ -225,8 +224,8 @@ body {
 }
 @media screen and (min-width: 900px) {
   .zoneQuizz img {
-    width: 15.5rem;
-    height: 15.5rem;
+    width: 12rem;
+    height: 12rem;
     margin-top: -7em;
   }
 }
@@ -265,7 +264,6 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  margin-top: 2em;
 }
 
 .reponseBox {
