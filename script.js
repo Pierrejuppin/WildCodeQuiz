@@ -1,6 +1,14 @@
 const menuB = document.querySelector(".menu");
 const openBtn = document.querySelector("#openBtn");
 const closeBtn = document.querySelector("#closeBtn");
+const inputUsers = document.querySelector("#formQuiz");
+let inputValue = "";
+
+inputUsers.addEventListener("submit", (form) => {
+  form.preventDefault();
+  inputValue = form.target[0].value;
+});
+
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
@@ -11,6 +19,7 @@ function openNav() {
 function closeNav() {
   menuB.classList.remove("active");
 }
+
 
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
@@ -66,7 +75,7 @@ window.onload = function () {
 
 const quizData = [
   {
-    question: "1. Qui a Racheté Ghithub l'an dernier ?",
+    question: "1. Qui a racheté Ghithub l'an dernier ?",
     options: ["Apple", "Microsoft", "IBM", "Google"],
     answer: "Microsoft",
     image: (src = "assets/GIT.jpg"),
@@ -94,7 +103,7 @@ const quizData = [
     image: (src = "assets/IP.jpg"),
   },
   {
-    question: "4. Quand est née officielement Internet?",
+    question: "4. Quand est né officiellement Internet?",
     options: ["1988", "1989", "1982", "1990"],
     answer: "1989",
     image: (src = "assets/naissanceWeb.jpg"),
@@ -134,13 +143,12 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",
-    ],
+      "Peter Heins-Pazultek",],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
   {
-    question: "10. En quelle année PHP a Officiellement été rendu publique?",
+    question: "10. En quelle année PHP a officiellement été rendu publique?",
     options: ["1994", "1995", "1996", "1994"],
     answer: "1995",
     image: (src = "assets/lastphp.jpg"),
@@ -195,11 +203,10 @@ function checkAnswer(selectedAnswer) {
     mainDisplay.style.display = "none";
     buttonOff.style.display = "none";
     textAreaOff.style.display = "none";
-    winQuiz.innerText = `Bravo !\n Vous avez ${score}/10 `;
+    winQuiz.innerText = `Bravo ${inputValue}!\n Vous avez ${score}/10 `;
     winBack.style.backgroundImage = "url(assets/EndImage.jpg)";
     winBack.style.backgroundSize = "100% 100%";
-
-    //ici modification texte de fin de quizz à ajouter
+     //ici modification texte de fin de quizz à ajouter
   }
 }
 
