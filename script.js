@@ -1,6 +1,14 @@
 const menuB = document.querySelector(".menu");
 const openBtn = document.querySelector("#openBtn");
 const closeBtn = document.querySelector("#closeBtn");
+const inputUsers = document.querySelector("#formQuiz");
+let inputValue = "";
+
+inputUsers.addEventListener("submit", (form) => {
+  form.preventDefault();
+  inputValue = form.target[0].value;
+});
+
 
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
@@ -11,6 +19,7 @@ function openNav() {
 function closeNav() {
   menuB.classList.remove("active");
 }
+
 
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
@@ -134,8 +143,7 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",
-    ],
+      "Peter Heins-Pazultek",],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
@@ -150,17 +158,10 @@ const quizData = [
 const questionQuiz = document.querySelector(".question");
 const responseQuiz = document.querySelectorAll(".reponse button");
 const scoreQuiz = document.querySelector(".boxScore");
-const imageQuiz = documents.getElementById("questionImage");
-/* const form = document.querySelector("#formQuiz"); */
+const imageQuiz = document.getElementById("questionImage");
 
 let nowQuestionIndex = 0;
 let score = 0;
-
-/* form.addEventListener("submit", (event) => {
-      event.preventDefault();
-}
-); */
-
 
 function displayNowQuestion() {
   const nowQuestion = quizData[nowQuestionIndex];
@@ -179,12 +180,12 @@ function checkAnswer(selectedAnswer) {
   const nowQuestion = quizData[nowQuestionIndex];
   if (selectedAnswer === nowQuestion.answer) {
     score++;
-       updateScore();
-     }  
-  else {
-         updateScore();
-        } 
-        
+
+    updateScore();
+  } else {
+    updateScore();
+  }
+
   nowQuestionIndex++;
   if (nowQuestionIndex < quizData.length) {
     displayNowQuestion();
@@ -192,18 +193,25 @@ function checkAnswer(selectedAnswer) {
     const headerDisplay = document.querySelector("header");
     const mainDisplay = document.querySelector("main");
     const hideHome = document.querySelector(".homeContainer");
+    const buttonOff = document.querySelector(".goBtn");
+    const textAreaOff = document.querySelector(".userPseudoHome");
+    const winQuiz = document.querySelector("#title");
+    const winBack = document.querySelector(".welcomeBox");
+
     hideHome.style.display = "block";
     headerDisplay.style.display = "none";
     mainDisplay.style.display = "none";
-    //ici modification texte de fin de quizz à ajouter
+    buttonOff.style.display = "none";
+    textAreaOff.style.display = "none";
+    winQuiz.innerText = `Bravo ${inputValue}!\n Vous avez ${score}/10 `;
+    winBack.style.backgroundImage = "url(assets/EndImage.jpg)";
+    winBack.style.backgroundSize = "100% 100%";
+     //ici modification texte de fin de quizz à ajouter
   }
 }
 
-window.onload = displayNowQuestion;
- 
-
-responseQuiz.forEach(button => {
-  button.addEventListener("click", function() {
+responseQuiz.forEach((button) => {
+  button.addEventListener("click", function () {
     checkAnswer(this.textContent);
   });
 });
