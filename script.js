@@ -12,7 +12,6 @@ function closeNav() {
   menuB.classList.remove("active");
 }
 
-
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
 const backgroundColorDoc = `#82c0ccff`;
@@ -35,7 +34,7 @@ for (let i = 0; i < homeToQuiz.length; i++) {
     mainDisplay.style.display = "block";
     bodyBackgroundColor.style.backgroundColor = "#16697aff";
     if (mainDisplay.style.display === "block") {
-      const fiveMinutes = 60 * 5,
+      const fiveMinutes = 60 * 2,
         display = document.querySelector(".timer");
       startTimer(fiveMinutes, display);
     }
@@ -135,7 +134,8 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",],
+      "Peter Heins-Pazultek",
+    ],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
