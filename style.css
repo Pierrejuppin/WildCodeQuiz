@@ -265,7 +265,6 @@ body {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
-  margin-top: 2em;
 }
 
 .reponseBox {
