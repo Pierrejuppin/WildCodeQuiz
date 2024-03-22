@@ -9,7 +9,6 @@ inputUsers.addEventListener("submit", (form) => {
   inputValue = form.target[0].value;
 });
 
-
 openBtn.onclick = openNav;
 closeBtn.onclick = closeNav;
 function openNav() {
@@ -19,7 +18,6 @@ function openNav() {
 function closeNav() {
   menuB.classList.remove("active");
 }
-
 
 //ci dessous la couleur de la page à l'arrivé de l'utilisateur sur le site//
 const homeBody = document.getElementById("background");
@@ -143,13 +141,14 @@ const quizData = [
       "Rasmus Lerdorf",
       "Rasmus Lesdorf",
       "Rasmus Php",
-      "Peter Heins-Pazultek",],
+      "Peter Heins-Pazultek",
+    ],
     answer: "Rasmus Lerdorf",
     image: (src = "assets/php.jpg"),
   },
   {
     question: "10. En quelle année PHP a officiellement été rendu publique?",
-    options: ["1994", "1995", "1996", "1994"],
+    options: ["1994", "1995", "1996", "1998"],
     answer: "1995",
     image: (src = "assets/lastphp.jpg"),
   },
@@ -206,7 +205,7 @@ function checkAnswer(selectedAnswer) {
     winQuiz.innerText = `Bravo ${inputValue}!\n Vous avez ${score}/10 `;
     winBack.style.backgroundImage = "url(assets/EndImage.jpg)";
     winBack.style.backgroundSize = "100% 100%";
-     //ici modification texte de fin de quizz à ajouter
+    //ici modification texte de fin de quizz à ajouter
   }
 }
 
