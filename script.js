@@ -75,7 +75,7 @@ window.onload = function () {
 
 const quizData = [
   {
-    question: "1. Qui a Racheté Ghithub l'an dernier ?",
+    question: "1. Qui a racheté Ghithub l'an dernier ?",
     options: ["Apple", "Microsoft", "IBM", "Google"],
     answer: "Microsoft",
     image: (src = "assets/GIT.jpg"),
@@ -103,7 +103,7 @@ const quizData = [
     image: (src = "assets/IP.jpg"),
   },
   {
-    question: "4. Quand est née officielement Internet?",
+    question: "4. Quand est né officiellement Internet?",
     options: ["1988", "1989", "1982", "1990"],
     answer: "1989",
     image: (src = "assets/naissanceWeb.jpg"),
@@ -148,7 +148,7 @@ const quizData = [
     image: (src = "assets/php.jpg"),
   },
   {
-    question: "10. En quelle année PHP a Officiellement été rendu publique?",
+    question: "10. En quelle année PHP a officiellement été rendu publique?",
     options: ["1994", "1995", "1996", "1994"],
     answer: "1995",
     image: (src = "assets/lastphp.jpg"),
